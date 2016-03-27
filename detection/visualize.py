@@ -25,7 +25,7 @@ def divide_wav(path, sec):
     cmd = 'sox %s.wav %s_part_.wav trim 0 %d : newfile : restart' % (base, base, sec)
     subprocess.check_output(cmd.split(" "))
     last = glob.glob(base + "_part_*")[-1]
-    os.remove(last)
+    # os.remove(last)
 
 def create_spectrogram(path):
     output_path = path.replace('.wav', '.png')
@@ -44,7 +44,7 @@ def create_wavs(directory=DATA_DIR, sec=3):
 def create_spectrograms(directory=DATA_DIR):
     for path in glob.glob(os.path.join(directory, '*', '*_part_*.wav')):
         create_spectrogram(path)
-        print("Create: ", path.replace('wav', '{wav,png}'))
+        # print("Create: ", path.replace('wav', '{wav,png}'))
 
 def show_mfccs(numbers, X, y, labels):
   for number, label in zip(numbers, labels):

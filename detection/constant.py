@@ -1,3 +1,3 @@
 
 DATA_DIR = "./data"
-LABELS = ["silent", "speech"]
+LABELS = ["silent", "speech", "noise"]
